@@ -1,99 +1,128 @@
-# Debye Temperature Predictor
-
-A standalone Windows application for rapid prediction of Debye temperature (Θ_D) from crystal structure files.
-
-This application accompanies our study on machine-learning-assisted screening of structurally confined host lattices for high-concentration Eu²⁺-activated luminescent materials.
-
-## Main features
-
-- Import a `.cif` crystal structure file
-- Automatically extract structure-related descriptors
-- Predict Debye temperature (Θ_D)
-- Simple graphical user interface
-- No source-code installation required for end users
-
-## Reported model performance
-
-The Debye-temperature model used in the manuscript achieved the following five-fold cross-validation performance:
-
-- R² = 0.968
-- MAE = 28.12 K
-- RMSE = 43.64 K
-
-## Download
-
-The Windows executable is provided in the **Releases** section of this repository.
-
-Recommended release name:
-
-`Debye Temperature Predictor v1.0.0`
-
-If the executable file is smaller than GitHub's direct upload limit, it may also be placed in:
-
-`app/Debye_Temperature_Predictor.exe`
-
-## How to use
-
-1. Download the latest Windows release.
-2. Launch `Debye_Temperature_Predictor.exe`.
-3. Click **Import CIF** or the corresponding file-selection button.
-4. Select a valid `.cif` structure file.
-5. Run the prediction.
-6. The predicted Debye temperature will be displayed in kelvin.
-
-An example CIF file is provided in the `examples/` folder.
-
-## Input
-
-Supported input:
-
-- Crystallographic Information File (`.cif`)
-
-The prediction tool is intended for inorganic crystalline materials.
-
-## Output
-
-The application reports the predicted Debye temperature:
-
-`Θ_D (K)`
-
-## Scope and limitations
-
-This software is intended primarily for rapid materials screening.
-
-Predicted values should not be interpreted as replacements for experimental measurements or high-accuracy first-principles elastic/phonon calculations.
-
-Prediction reliability may decrease for compounds that are chemically or structurally far outside the training-data domain.
-
-## Citation
-
-If you use this application in academic work, please cite the associated paper:
-
-R. Wang, Z. Leng, et al., “Machine-Learning-Assisted Multidimensional Screening of Structurally Confined Lattices toward High-Concentration Eu²⁺-Activated Dual-Mode Photoluminescence and Mechanoluminescence,” *Advanced Materials*, publication information to be updated after acceptance.
-
-## Academic use
-
-The application is freely available for academic and non-commercial research use.
-
-## Repository contents
-
+Debye Temperature Predictor
+<p align="center">
+  <b>A standalone machine-learning application for rapid Debye-temperature prediction from crystallographic information files.</b>
+</p>
+<p align="center">
+  <a href="https://github.com/wwwrssss/Debye-Temperature-Predictor/releases/latest"><b>Download the latest Windows release</b></a>
+  \&nbsp;•\&nbsp;
+  <a href="https://github.com/wwwrssss/Debye-Temperature-Predictor/tree/main/examples"><b>Example CIF</b></a>
+  \&nbsp;•\&nbsp;
+  <a href="https://github.com/wwwrssss/Debye-Temperature-Predictor/tree/main/docs"><b>Documentation</b></a>
+</p>
+---
+Overview
+Debye Temperature Predictor is a standalone Windows application developed for rapid estimation of the Debye temperature, Θ_D, of inorganic crystalline materials directly from crystallographic information files (`.cif`).
+The application was developed as part of a machine-learning-assisted materials-screening workflow in which Debye temperature is used as a descriptor of lattice rigidity. The software is intended to make the trained prediction model easier to use without requiring users to install Python or run source code.
+> \*\*Manuscript status:\*\* The associated research article is currently under submission/review. Full bibliographic information will be added after publication.
+---
+Download
+The latest compiled Windows application is available from the GitHub Releases page:
+Download Debye Temperature Predictor v1.0.0
+Current release:
+Version: v1.0.0
+Platform: Windows
+Input: `.cif`
+Output: predicted Debye temperature, Θ_D (K)
+No Python installation is required for the standalone Windows executable.
+---
+Software Interface
+<p align="center">
+  <img src="screenshots/software.png" alt="Debye Temperature Predictor interface" width="850">
+</p>
+---
+Model Performance
+The Debye-temperature prediction model used in the associated manuscript achieved the following five-fold cross-validation performance:
+Metric	Value
+R²	0.968
+MAE	28.12 K
+RMSE	43.64 K
+These values correspond to the model version used in the associated study.
+---
+Main Features
+Direct import of crystallographic information files (`.cif`)
+Automatic extraction of composition- and structure-related descriptors
+Rapid prediction of Debye temperature
+Graphical user interface for non-programming users
+Standalone Windows executable
+Example CIF file provided for testing
+Free for academic and non-commercial research use
+---
+Quick Start
+1. Download
+Open the latest release:
+https://github.com/wwwrssss/Debye-Temperature-Predictor/releases/latest
+Download the Windows executable:
+```text
+Debye.Temperature.Predictor.v1.0.0.exe
+```
+2. Launch
+Double-click the downloaded executable.
+Because this is research software distributed as an unsigned executable, Windows may display a security warning. Please verify that the file was downloaded from this official repository before running it.
+3. Import a structure
+Select a valid `.cif` file using the file-selection button in the application.
+4. Predict
+Run the prediction. The application will report:
+```text
+Predicted Debye temperature: Θ\_D (K)
+```
+An example CIF file is available in:
+```text
+examples/example\_BaO.cif
+```
+---
+Intended Use
+This application is designed primarily for:
+rapid screening of inorganic crystalline materials;
+comparison of lattice-rigidity-related trends;
+preliminary candidate selection before more computationally intensive calculations;
+materials-discovery workflows requiring fast Debye-temperature estimates.
+---
+Important Limitations
+The predicted Debye temperatures are machine-learning estimates intended for screening purposes.
+They should not be considered replacements for:
+experimental Debye-temperature measurements;
+first-principles elastic calculations;
+phonon calculations;
+other high-accuracy property calculations.
+Prediction reliability may decrease for materials that are chemically or structurally far outside the training-data domain.
+---
+Repository Structure
 ```text
 Debye-Temperature-Predictor/
 ├── README.md
 ├── LICENSE
 ├── CITATION.cff
-├── app/
-│   └── PUT_YOUR_EXE_HERE.txt
-├── examples/
-│   └── example_BaO.cif
 ├── docs/
-│   ├── USER_GUIDE.md
-│   ├── MODEL_INFORMATION.md
-│   └── RELEASE_CHECKLIST.md
+│   ├── USER\_GUIDE.md
+│   ├── MODEL\_INFORMATION.md
+│   └── RELEASE\_CHECKLIST.md
+├── examples/
+│   └── example\_BaO.cif
 └── screenshots/
-    └── PUT_INTERFACE_SCREENSHOT_HERE.txt
+    └── software.png
 ```
-
-## Contact
-
-For questions regarding the application or associated research, please contact the corresponding authors of the paper.
+The compiled application is distributed through GitHub Releases rather than stored directly in the main repository.
+---
+Citation
+The associated research article is currently under submission/review.
+Until the article is formally published, please cite the software repository if you use the application in academic work:
+```text
+Debye Temperature Predictor, version 1.0.0.
+https://github.com/wwwrssss/Debye-Temperature-Predictor
+```
+The `CITATION.cff` file will be updated with the final article information after publication.
+---
+Availability Statement for the Manuscript
+A suitable statement for the Experimental Section is:
+> Based on the developed Debye-temperature prediction model (R² = 0.968, MAE = 28.12 K, and RMSE = 43.64 K), a standalone application was further developed to enable rapid Θ\_D estimation from crystallographic information files. The application is freely available for academic use at https://github.com/wwwrssss/Debye-Temperature-Predictor.
+---
+License and Use
+The compiled application is provided free of charge for academic and non-commercial research use.
+Please see the `LICENSE` file for details.
+---
+Version
+Current release: v1.0.0
+For reproducible academic use, please report the software version used in your work.
+---
+Contact
+For questions regarding the software or the associated research, please contact the authors of the accompanying manuscript.
