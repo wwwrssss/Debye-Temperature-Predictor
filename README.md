@@ -8,7 +8,7 @@
 
 ## Overview
 
-**Debye Temperature Predictor** is a standalone Windows application developed for rapid estimation of the Debye temperature, Θ_D, of inorganic crystalline materials directly from crystallographic information files (`.cif`).
+**Debye Temperature Predictor** is a standalone Windows application developed for rapid estimation of the Debye temperature, of inorganic crystalline materials directly from crystallographic information files (`.cif`).
 
 The application was developed as part of a machine-learning-assisted materials-screening workflow in which Debye temperature is used as a descriptor of lattice rigidity. The software is intended to make the trained prediction model easier to use without requiring users to install Python or run source code.
 
@@ -25,7 +25,7 @@ The latest compiled Windows application is available from the GitHub Releases pa
 - **Version:** v1.0.0
 - **Platform:** Windows
 - **Input:** `.cif`
-- **Output:** predicted Debye temperature, Θ_D (K)
+- **Output:** predicted Debye temperature (K)
 
 No Python installation is required for the standalone Windows executable.
 
